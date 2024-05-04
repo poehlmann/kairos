@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>
+        Prayer Requests - Cottage Grove Church
+    </title>
+    <meta content="width=device-width,initial-scale=1.0" name="viewport"/>
+    <link rel="apple-touch-icon"
+          href="https://avatars.planningcenteronline.com/uploads/organization/207530-1470704985/avatar.8.png">
+    <link rel="apple-touch-icon" sizes="180x180"
+          href="https://avatars.planningcenteronline.com/uploads/organization/207530-1470704985/avatar.8.png?g=180x180">
+    <link rel="apple-touch-icon" sizes="167x167"
+          href="https://avatars.planningcenteronline.com/uploads/organization/207530-1470704985/avatar.8.png?g=167x167">
+    <link rel="apple-touch-icon" sizes="152x152"
+          href="https://avatars.planningcenteronline.com/uploads/organization/207530-1470704985/avatar.8.png?g=152x152">
+    <link rel="apple-touch-icon" sizes="120x120"
+          href="https://avatars.planningcenteronline.com/uploads/organization/207530-1470704985/avatar.8.png?g=120x120">
+
+    <meta property="og:type" content="website"/>
+    <meta property="og:site_name" content="Cottage Grove Church"/>
+    <meta property="og:title" content="Prayer Requests"/>
+
+    <script>
+        ;(function () {
+            var state = {
+                blessed: "unknown", // unknown, yes, no
+                inIframe: (function inIframe() {
+                    try {
+                        return window.self !== window.top
+                    } catch (e) {
+                        return true
+                    }
+                })(),
+            }
+
+            function setBlessed(nextBlessed) {
+                state.blessed = nextBlessed
+                render()
+            }
+
+            function confirmBlessed() {
+                setBlessed("yes")
+            }
+
+            function assumeNotBlessed() {
+                if (state.blessed === "unknown") {
+                    setBlessed("no")
+                    console.log(
+                        "Trying to put Giving on your website? Use the fully supported ChurchCenterModal! Instructions are available at https://pcogiving.zendesk.com/hc/en-us/articles/115014121428"
+                    )
+                }
+            }
+
+            function render() {
+                var classList = document.body.classList
+                classList.remove("iframed")
+                classList.remove("iframed--blessed-unknown")
+                classList.remove("iframed--blessed-yes")
+                classList.remove("iframed--blessed-no")
+
+                if (state.inIframe) {
+                    classList.add("iframed")
+                    classList.add("iframed--blessed-" + state.blessed)
+                }
+            }
+
+            function showIFrame() {
+                render()
+                window.scrollTo(0, 0)
+                postMessageToChurchCenterButton("ready")
+                setTimeout(assumeNotBlessed, 1000)
+            }
+
+            function receiveMessageFromChurchCenterButton(e) {
+                var location = new URL(e.origin)
+                var isHTTPS =
+                    location.protocol === "https:" ||
+                    location.host.slice(0, 9) === "localhost" ||
+                    location.host.match(/\.test$/)
+                if (e.data.type === "verified") {
+                    if (isHTTPS) {
+                        confirmBlessed()
+                        postMessageToChurchCenterButton("show")
+                    } else {
+                        throw "ChurchCenterButton: must be called from an HTTPS page."
+                    }
+                }
+            }
+
+            function postMessageToChurchCenterButton(type) {
+                parent.postMessage({type: type}, "*")
+            }
+
+            function handleKeyup(event) {
+                if (event.keyCode === 27) {
+                    if (event.target === document.body) close()
+                    else if (event.target.blur) event.target.blur()
+                }
+            }
+
+            function run() {
+                if (!state.inIframe) return
+                window.addEventListener(
+                    "message",
+                    receiveMessageFromChurchCenterButton,
+                    false
+                )
+                var initEvent = window.Turbolinks ? "turbolinks:load" : "DOMContentLoaded"
+                document.addEventListener(initEvent, showIFrame)
+                document.addEventListener("keyup", handleKeyup)
+            }
+
+            function close() {
+                postMessageToChurchCenterButton("close")
+            }
+
+            window.ChurchCenterButtonRemote = new function ChurchCenterButtonRemote() {
+                this.close = close
+            }()
+
+            run()
+        })()
+
+    </script>
+
+
+    <script>window.features = {
+        "ACCOUNTS_TOGGLE_enable_sign_up_captcha": true,
+        "ACCOUNTS_TOGGLE_enable_sign_up_sms_verification": true,
+        "FEATURE_a2p10dlc": true,
+        "FEATURE_address_autocomplete": true,
+        "FEATURE_address_country_code": true,
+        "FEATURE_auto_refresh_frequencies": true,
+        "FEATURE_core_automations": true,
+        "FEATURE_core_automations_lists": true,
+        "LOGIN_ROLLOUT_everblue": true,
+        "LOGIN_TOGGLE_enable_2sv_sms_carrier_check": true,
+        "ROLLOUT_addons": true,
+        "ROLLOUT_add_or_remove_household_members": true,
+        "ROLLOUT_admin_notifications": true,
+        "ROLLOUT_church_center_theming": true,
+        "ROLLOUT_directory_privacy_mode_admin": true,
+        "ROLLOUT_directory_privacy_mode_onboarding_complete": true,
+        "ROLLOUT_disable_accounts_powered_campus_home_pages": true,
+        "ROLLOUT_forms_recaptcha": true,
+        "ROLLOUT_full_width_layout": true,
+        "ROLLOUT_login_delivers_disconnected_accounts_email": true,
+        "ROLLOUT_log_org_admin_permission_change": true,
+        "ROLLOUT_mailgun_event_suppressions": true,
+        "ROLLOUT_sales_tax_calculations": true,
+        "ROLLOUT_security_event_logging": true,
+        "TOPBAR_enable_notifications": true,
+        "TOPBAR_mfa_enabled": true,
+        "TOPBAR_notifications_enabled": true,
+        "TOPBAR_toolbar_enabled": true
+    };</script>
+    <meta content="noindex,nofollow,noarchive" name="robots"/>
+    <script src="https://www.googletagmanager.com/gtag/js?id=UA-462630-12" async="async"></script>
+    <script>window.dataLayer = window.dataLayer || []
+
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date())
+    gtag('config', 'UA-462630-12')</script>
+    <script>window.currentOrganization = {
+        dateFormat: "%m/%d/%Y"
+    };</script>
+    <script src="https://people.planningcenteronline.com/packs/js/runtime-b5c64fd8b3554f0e40c7.js"
+            data-turbolinks-track="reload"></script>
+    <script src="https://people.planningcenteronline.com/packs/js/983-94fff7b697a35d510bc0.js"
+            data-turbolinks-track="reload"></script>
+    <script src="https://people.planningcenteronline.com/packs/js/30-7682c72a6d899857fbe6.js"
+            data-turbolinks-track="reload"></script>
+    <script src="https://people.planningcenteronline.com/packs/js/486-86fb17fb7f7c5ea3b560.js"
+            data-turbolinks-track="reload"></script>
+    <script src="https://people.planningcenteronline.com/packs/js/701-cc4e73092f2c51e0882b.js"
+            data-turbolinks-track="reload"></script>
+    <script src="https://people.planningcenteronline.com/packs/js/762-a31d6eb657a938eec1a6.js"
+            data-turbolinks-track="reload"></script>
+    <script src="https://people.planningcenteronline.com/packs/js/444-2d6569368e0e95adf0be.js"
+            data-turbolinks-track="reload"></script>
+    <script src="https://people.planningcenteronline.com/packs/js/91-e513c4b8cc87a7660a06.js"
+            data-turbolinks-track="reload"></script>
+    <script src="https://people.planningcenteronline.com/packs/js/981-55490f3089710ac95ba3.js"
+            data-turbolinks-track="reload"></script>
+    <script src="https://people.planningcenteronline.com/packs/js/315-461b414c1bd24d00817a.js"
+            data-turbolinks-track="reload"></script>
+    <script src="https://people.planningcenteronline.com/packs/js/958-9a0078d80818b09827c3.js"
+            data-turbolinks-track="reload"></script>
+    <script src="https://people.planningcenteronline.com/packs/js/402-fc2dbb1af9c731abd250.js"
+            data-turbolinks-track="reload"></script>
+    <script src="https://people.planningcenteronline.com/packs/js/430-52268ef99ceca4b5538e.js"
+            data-turbolinks-track="reload"></script>
+    <script src="https://people.planningcenteronline.com/packs/js/76-ceed3d0ab261847d863d.js"
+            data-turbolinks-track="reload"></script>
+    <script src="https://people.planningcenteronline.com/packs/js/568-0b48194c6e036d3b425d.js"
+            data-turbolinks-track="reload"></script>
+    <script src="https://people.planningcenteronline.com/packs/js/church_center-cae03b936c53554c2bf8.js"
+            data-turbolinks-track="reload"></script>
+    <script src="https://people.planningcenteronline.com/assets/church_center-f2617985d21a728ec2d269db8aa3be17bd31fd94d84505a83a0c12d9800d6477.js"
+            data-turbolinks-track="true"></script>
+    <link rel="stylesheet" media="all"
+          href="https://people.planningcenteronline.com/assets/church_center_web-e6e443700cafca45e10ff50b39b7c94424240efdea00cb3c8dc83b79a9c0ee89.css"
+          data-turbolinks-track="reload"/>
+    <script src="https://people.planningcenteronline.com/assets/@planningcenter/icons/js/svg4everybody-2f737225f5914c04d720335eda4a5d2e4da4b068793d6e3f62abf60f96ae8ed7.js"></script>
+    <meta property="og:image"
+          content="https://account-center-production.s3.amazonaws.com/uploads/organization/207530-1470704985/avatar.8.png"/>
+    <meta property="og:description"
+          content="We as the elders of Cottage Grove Church are commissioned to do two primary things, according to the scriptures. That is to teach the Word of God and to pray for the saints (Acts 6:2-4 ESV). What we would like to do is provide you a space where you can reach out to the elders and request prayer for specific needs or desires. We commit to raising up these requests before the Lord on your behalf and will follow-up with you when the opportunity presents itself. &quot;Is anyone among you suffering? Let him pray. Is anyone cheerful? Let him sing praise. Is anyone among you sick? Let him call for the elders of the church, and let them pray over him, anointing him with oil in the name of the Lord. And the prayer of faith will save the one who is sick, and the Lord will raise him up. And if he has committed sins, he will be forgiven. Therefore, confess your sins to one another and pray for one another, that you may be healed. The prayer of a righteous person has great power as it is working.&quot; James 5:13-16 ESV"/>
+    <script>window.svg4everybody()</script>
+</head>
+
+<body class="sans-serif " data-color-scheme="light" data-contrast="low">
+
+<script>
+    //<![CDATA[
+
+    (function () {
+        const urlParams = new URLSearchParams(window.location.search)
+        const urlTheme = urlParams.get('theme')
+        const localStorageTheme = getLocalStorageTheme()
+        const defaultTheme = urlTheme || localStorageTheme || 'light'
+
+        if (urlTheme !== null && urlTheme !== localStorageTheme) {
+            try {
+                localStorage.setItem("ChurchCenterTheme", JSON.stringify(urlTheme))
+            } catch (error) {
+                console.log(error)
+            }
+        }
+
+        function getLocalStorageTheme() {
+            try {
+                return JSON.parse(localStorage.getItem('ChurchCenterTheme'))
+            } catch (error) {
+                console.log(error)
+                return null
+            }
+        }
+
+        function render(untrusted) {
+            var trusted = "light"
+            if (untrusted === "dark" || untrusted === "dark-low") trusted = "dark"
+            document.body.setAttribute("data-color-scheme", trusted)
+            document.body.setAttribute("data-contrast", "low")
+            document.body.setAttribute("data-background-color", "")
+        }
+
+        if (window.ReactNativeWebView) {
+            render(window.forceTheme)
+            window.setForceTheme = render
+        } else {
+
+            render(defaultTheme)
+        }
+    })()
+
+    //]]>
+</script>
+<a href="#main_page_content" class="screen-reader-text">Skip to content</a>
+<div class="iframed-content-for--blessed-unknown d-n">
+    <img src="/static/embed-loading.svg" alt="loading"/>
+</div>
+<div class="iframed-content-for--blessed-no d-n">
+    <a class="btn" href="javascript:window.open(location,'_blank');">
+        Forms
+    </a>
+</div>
+<div class="iframed-content-for--blessed-yes">
+
+
+    <div class="page-container d-f fd-c" role="main">
+        <a class="close-iframe d-n" onclick="javascript:ChurchCenterButtonRemote.close()">
+          <span class="icon d-if ai-c">
+            <svg class="symbol" id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><title>x</title><polygon
+                    points="16 1.611 14.389 0 8 6.389 1.611 0 0 1.611 6.389 8 0 14.389 1.611 16 8 9.611 14.389 16 16 14.389 9.611 8 16 1.611"/></svg>
+          </span>
+        </a>
+
+        <div data-turbolinks="false">
+            <div data-react-class="Components.SelfHydratingHeader"
+                 data-react-props="{&quot;defaultOrganizationDisplayName&quot;:&quot;Cottage Grove Church&quot;,&quot;defaultOrganizationImageUrl&quot;:&quot;https://avatars.planningcenteronline.com/uploads/organization/207530-1470704985/avatar.8.png&quot;,&quot;defaultPersonDisplayName&quot;:&quot;Guest&quot;,&quot;defaultPersonIdentified&quot;:false,&quot;defaultPersonImageUrl&quot;:&quot;https://people.planningcenteronline.com/static/no_photo_thumbnail.svg&quot;}"
+                 data-react-cache-id="Components.SelfHydratingHeader-0"></div>
+        </div>
+
+
+        <div id="main_page_content" class="page-content f-1">
+            <div class="p-3@iframe container container--narrow ">
+                <section>
+                    <div data-react-class="Components.Form"
+                         data-react-props="{&quot;id&quot;:130192,&quot;name&quot;:&quot;Prayer Requests&quot;,&quot;description&quot;:&quot;We as the elders of Cottage Grove Church are commissioned to do two primary things, according to the scriptures. That is to teach the Word of God and to pray for the saints (Acts 6:2-4 ESV). What we would like to do is provide you a space where you can reach out to the elders and request prayer for specific needs or desires.\n\nWe commit to raising up these requests before the Lord on your behalf and will follow-up with you when the opportunity presents itself. \n\n\&quot;Is anyone among you suffering? Let him pray. Is anyone cheerful? Let him sing praise. Is anyone among you sick? Let him call for the elders of the church, and let them pray over him, anointing him with oil in the name of the Lord. And the prayer of faith will save the one who is sick, and the Lord will raise him up. And if he has committed sins, he will be forgiven. Therefore, confess your sins to one another and pray for one another, that you may be healed. The prayer of a righteous person has great power as it is working.\&quot; James 5:13-16 ESV&quot;,&quot;phoneTypes&quot;:[&quot;Mobile&quot;,&quot;Home&quot;,&quot;Work&quot;,&quot;Other&quot;],&quot;addressTypes&quot;:[&quot;Home&quot;,&quot;Work&quot;,&quot;Other&quot;],&quot;grades&quot;:[{&quot;key&quot;:-1,&quot;value&quot;:&quot;Pre-Kindergarten&quot;},{&quot;key&quot;:0,&quot;value&quot;:&quot;Kindergarten&quot;},{&quot;key&quot;:1,&quot;value&quot;:&quot;1st Grade&quot;},{&quot;key&quot;:2,&quot;value&quot;:&quot;2nd Grade&quot;},{&quot;key&quot;:3,&quot;value&quot;:&quot;3rd Grade&quot;},{&quot;key&quot;:4,&quot;value&quot;:&quot;4th Grade&quot;},{&quot;key&quot;:5,&quot;value&quot;:&quot;5th Grade&quot;},{&quot;key&quot;:6,&quot;value&quot;:&quot;6th Grade&quot;},{&quot;key&quot;:7,&quot;value&quot;:&quot;7th Grade&quot;},{&quot;key&quot;:8,&quot;value&quot;:&quot;8th Grade&quot;},{&quot;key&quot;:9,&quot;value&quot;:&quot;9th Grade&quot;},{&quot;key&quot;:10,&quot;value&quot;:&quot;10th Grade&quot;},{&quot;key&quot;:11,&quot;value&quot;:&quot;11th Grade&quot;},{&quot;key&quot;:12,&quot;value&quot;:&quot;12th Grade&quot;}],&quot;defaultFirstName&quot;:null,&quot;defaultLastName&quot;:null,&quot;defaultEmailAddress&quot;:null,&quot;defaultCountryCode&quot;:&quot;US&quot;,&quot;person&quot;:null,&quot;encryptedParam&quot;:null,&quot;recaptchaEnabled&quot;:true,&quot;recaptchaSiteKey&quot;:&quot;6LeUrVwkAAAAAI6YYqgV9p1QnHZPEAG1biN8uiqt&quot;}"
+                         data-react-cache-id="Components.Form-0"></div>
+                </section>
+            </div>
+        </div><!-- page-content -->
+
+        <div class="container container--narrow">
+            <div id="qrcode-wrapper" class="action-drawer d-f p-2 mt-4" style="display: none">
+                <div class="mr-2">
+                    <a class="qrcode-download">
+                        <img id="qrcode" alt="qrcode"/>
+                    </a>
+                </div>
+                <div class="f-1">
+                    <p>
+                        Use this graphic in printed materials or on displayed screens.
+                        People can scan the code using their phone's built-in code reader
+                        ("Camera" on iOS, "Google Assistant" on Android) to be brought straight to this URL –
+                        without having to type it.
+                    </p>
+                    <p>
+                        <a class="qrcode-download c-brand">Download QR Code</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            (function () {
+                var WRAPPER_ID = "qrcode-wrapper";
+                var IMAGE_ID = "qrcode";
+                var DOWNLOAD_CLASS = "qrcode-download";
+
+                var qrOptions = {
+                    errorCorrectionLevel: "H",
+                    margin: 0,
+                    width: 150,
+                    color: {
+                        dark: "#313437",
+                        light: "#FFF"
+                    }
+                };
+
+                function generateQrCode(callback) {
+                    if (hasGeneratedQrCode()) {
+                        return callback();
+                    }
+
+                    QRCode.toDataURL(window.location.toString(), qrOptions, function (
+                        error,
+                        url
+                    ) {
+                        if (error) return;
+
+                        var downloadLinks = document.getElementsByClassName(DOWNLOAD_CLASS);
+
+                        Array.prototype.forEach.call(downloadLinks, function (link) {
+                            link.href = url;
+                            link.download = "qrcode.png";
+                        });
+
+                        var image = document.getElementById(IMAGE_ID);
+                        image.src = url;
+                        image.width = qrOptions.width;
+
+                        callback();
+                    });
+                }
+
+                window.toggleQRCode = function () {
+                    var wrapper = getWrapper();
+                    if (wrapper.style.display === "none") {
+                        generateQrCode(function () {
+                            wrapper.style.display = null;
+                            setTimeout(function () {
+                                window.scrollTo(0, 10000000);
+                            }, 0);
+                        });
+                    } else {
+                        wrapper.style.display = "none";
+                    }
+                };
+
+                function getWrapper() {
+                    return document.getElementById(WRAPPER_ID);
+                }
+
+                function getImage() {
+                    return document.getElementById(IMAGE_ID);
+                }
+
+                function hasGeneratedQrCode() {
+                    return !!getImage().src;
+                }
+            })();
+
+        </script>
+
+        <footer class="site-footer" role="contentinfo">
+            <ul class="site-footer__links o-2 o-1@sm">
+                <li class="site-footer__link"><a class="c-brand" href="https://planning.center/terms/" target="_blank">Terms
+                    of Service</a></li>
+                <li class="site-footer__link"><a class="c-brand" href="https://planning.center/privacy/"
+                                                 target="_blank">Privacy Policy</a></li>
+            </ul>
+
+            <ul class="site-footer__links o-1 o-2@sm">
+                <li class="site-footer__link">Cottage Grove Church</li>
+                <li class="site-footer__link">info@cottagegrovedsm.com</li>
+                <li class="site-footer__link"><a class="fw-400 c-tint2" href="tel:515-393-4226">515-393-4226</a></li>
+            </ul>
+
+            <ul class="site-footer__links o-3 d-n d-f@md">
+                <li class="site-footer__link"><a class="fs-5 c-tint3" onclick="window.toggleQRCode()">Shareable Code</a>
+                </li>
+            </ul>
+        </footer>
+
+    </div>
+</div>
+</body>
+</html>
