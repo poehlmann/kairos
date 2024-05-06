@@ -63,7 +63,5 @@ function agregarParametroInicio() {
 }
 const fullurl=$(location).attr("href");
 if(fullurl != 'https://poehlmann.github.io/kairos/'){
-    const urlConParametro = agregarParametroInicio();
-    window.location =urlConParametro;
+    window.location = agregarParametroInicio();
 }
-console.log(urlConParametro);
