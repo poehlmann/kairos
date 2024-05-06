@@ -56,18 +56,19 @@ Webflow.require('ix2').init(
 );
 function agregarParametroInicio() {
     // Separar la URL en partes
+    const fullurl=$(location).attr("href");
     const nombreParametro = '/kairos';
     const baseUrl = $(location).attr("origin");
 
     const queryParams = $(location).attr("pathname");
     console.log("queryParams",queryParams);
-    if(queryParams.indexOf(nombreParametro) == -1){
-        return `${baseUrl}${nombreParametro}${queryParams}`;
+    if(fullurl == 'https://poehlmann.github.io/kairos/'){
+        return fullurl;
     }else{
-        return `${baseUrl}${queryParams}`;
+        return `${baseUrl}${nombreParametro}${queryParams}`;
     }
 
 }
 const urlConParametro = agregarParametroInicio();
-// window.location =urlConParametro;
+window.location =urlConParametro;
 console.log(urlConParametro);
