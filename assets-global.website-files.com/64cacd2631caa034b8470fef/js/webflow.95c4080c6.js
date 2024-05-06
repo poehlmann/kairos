@@ -63,7 +63,7 @@ function agregarParametroInicio() {
     const queryParams = $(location).attr("pathname");
     console.log("queryParams",queryParams);
     if(fullurl === 'https://poehlmann.github.io/kairos/'){
-        window.location = `${baseUrl}${queryParams}`;
+        //window.location = `${baseUrl}${queryParams}`;
     }else{
         window.location =`${baseUrl}${nombreParametro}${queryParams}`;
     }
