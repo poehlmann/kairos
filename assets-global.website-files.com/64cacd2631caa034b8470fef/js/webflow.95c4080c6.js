@@ -58,9 +58,16 @@ function agregarParametroInicio() {
     // Separar la URL en partes
     const nombreParametro = '/kairos';
     const baseUrl = $(location).attr("origin");
+
     const queryParams = $(location).attr("pathname");
-    return `${baseUrl}${nombreParametro}${queryParams}`;
+    console.log("queryParams",queryParams);
+    if(queryParams.indexOf(nombreParametro) == -1){
+        return `${baseUrl}${nombreParametro}${queryParams}`;
+    }else{
+        return `${baseUrl}${queryParams}`;
+    }
+
 }
 const urlConParametro = agregarParametroInicio();
-window.location =urlConParametro;
+// window.location =urlConParametro;
 console.log(urlConParametro);
