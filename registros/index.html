@@ -27,10 +27,26 @@
 
     <link rel="manifest" href="manifest.json">
 
+    <script>
+        function agregarParametroInicio() {
+            // Separar la URL en partes
+            const fullurl = $(location).attr("href");
+            const nombreParametro = '/kairos';
+            const baseUrl = $(location).attr("origin");
 
+            const queryParams = $(location).attr("pathname");
+            console.log("queryParams",queryParams);
+            if(fullurl === 'https://poehlmann.github.io/kairos/'){
+                //window.location = `${baseUrl}${queryParams}`;
+            }else{
+                window.location =`${baseUrl}${nombreParametro}${queryParams}`;
+            }
+        }
+        agregarParametroInicio();
+    </script>
 
     <script src="/assets/vite/assets/application-3x1mt06B.js" crossorigin="anonymous" type="module"></script><link rel="modulepreload" href="/assets/vite/assets/vendor-CHgPcOSl.js" as="script" crossorigin="anonymous">
-    <link rel="modulepreload" href="/assets/vite/assets/styles-DZagYlX9.js" as="script" crossorigin="anonymous"><link rel="stylesheet" href="/assets/vite/assets/styles-DC5ODrN4.css" media="screen" />
+    <link rel="modulepreload" href="//assets/vite/assets/styles-DZagYlX9.js" as="script" crossorigin="anonymous"><link rel="stylesheet" href="/assets/vite/assets/styles-DC5ODrN4.css" media="screen" />
 </head>
 
 <body class="sans-serif" role="document">

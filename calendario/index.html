@@ -31,6 +31,23 @@
     <link href="../assets-global.website-files.com/logo-black-kairos.png" rel="apple-touch-icon">
     <link href="/noticias" rel="canonical"/>
     <script src="../www.google.com/recaptcha/api.js" type="text/javascript"></script><!-- Google Tag Manager -->
+    <script>
+        function agregarParametroInicio() {
+            // Separar la URL en partes
+            const fullurl = $(location).attr("href");
+            const nombreParametro = '/kairos';
+            const baseUrl = $(location).attr("origin");
+
+            const queryParams = $(location).attr("pathname");
+            console.log("queryParams",queryParams);
+            if(fullurl === 'https://poehlmann.github.io/kairos/'){
+                //window.location = `${baseUrl}${queryParams}`;
+            }else{
+                window.location =`${baseUrl}${nombreParametro}${queryParams}`;
+            }
+        }
+        agregarParametroInicio();
+    </script>
     <script>(function (w, d, s, l, i) {
         w[l] = w[l] || [];
         w[l].push({
